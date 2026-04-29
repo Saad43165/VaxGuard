@@ -121,15 +121,15 @@ class TriageService {
 
   static TriageResult _buildResult(int normalizedScore, int rawScore) {
     if (normalizedScore < 15) {
-      return const TriageResult(
+      return TriageResult(
         level: RiskLevel.low,
-        score: 15,
+        score: normalizedScore,
         emoji: '✅',
         title: 'Low Risk',
         description:
             'Based on your responses, you appear to be at low risk. Continue maintaining good health practices.',
         recommendation: 'You appear safe. Continue healthy habits.',
-        actions: [
+        actions: const [
           'Wash hands regularly',
           'Stay up to date with vaccinations',
           'Monitor for any new symptoms',
